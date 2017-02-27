@@ -2,6 +2,8 @@
 <html lang="EN">
 <head>
 	<title>Pasto-Breakfast</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 	<div class="container">
@@ -11,14 +13,35 @@
 		<p>
 			Left Time <span>02:20</span>
 		</p>
-		<form>
-			<datalist>
-				<<option value="K cheese"></option>
-				<<option value="White cheese"></option>
-				<<option value="Book"></option>
-				<<option value="Basterma"></option>
+		<form action="" method="post">
+			<datalist id="browser">
+				<option value="K cheese">K cheese</option>
+				<option value="White cheese"></option>
+				<option value="Book"></option>
+				<option value="Basterma"></option>
 			</datalist>
+			<input list="browser">
+			<input type="submit" value="Order"/>
 		</form>
+		<div>
+			<p>
+				People like you
+			</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Name<th>
+						<th>Order<th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Ahmed<td>
+						<td>K Cheese Sandwitch<td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

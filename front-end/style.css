@@ -1,0 +1,19 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-image: url("background.jpg");
+  background-size: cover;
+}
+.container{
+  width: 80%;
+  margin: 0px auto;
+  background-color: skyblue;
+}
+h2, p, table{
+  font-family: 'Open Sans', sans-serif;
+}
+span{
+  font-family: 'Roboto Condensed', sans-serif;
+}
