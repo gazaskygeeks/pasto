@@ -2,6 +2,7 @@
 var https = require('https');
 var google = require('googleapis');
 var key = require('./key.json');
+var accessextractdata = require('./extractdata.js');
 var SHEET_ID = '1DY-JnL0myVggCoFIobL8FNIO3qlGg7mQOi97tzx8M4Q';
 var jwtClient = new google.auth.JWT(key.client_email,
     null,
@@ -29,7 +30,7 @@ jwtClient.authorize((err, tokens) => {
         console.log('here 3');
         var store = '';
         res.on('data', (chunk) => store = store + chunk);
-        res.on('end', () => console.log('store', store));
+        res.on('end', () => accessextractdata.extractdata(store));
     });
     req.end();
 });
