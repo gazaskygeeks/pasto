@@ -1,0 +1,82 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-image: url("img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container{
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 40px;
+  color: white;
+}
+p{
+	font-size: 34px;
+	font-weight: bold;
+
+}
+h1, p, table, input{
+  font-family: 'Open Sans', sans-serif;
+}
+span{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+}
+#left{
+	font-family: 'Roboto Condensed', sans-serif;
+  	font-size: 24px;
+  	color: #D35400;
+}
+.time{
+	width: 50%;
+	margin-left: 50px;
+}
+form{
+	width: 50%;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+#list-input{
+	width: 250px;
+	height: 30px;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+#submit{
+	width: 100px;
+	height: 30px;
+	background-color: #f39c12;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+}
+.ppl-order{
+	width: 50%;
+	margin-left: 50px;
+	margin-top: 40px;
+	text-align: left;
+}
+.ppl-order table{
+	width: 100%;
+	border-collapse: collapse
+}
+th {
+    background-color: #EB9532;
+    color: white;
+}
+tr {
+    background-color: #FDE3A7;
+    color: black;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
