@@ -1,29 +1,28 @@
 
 var datetime = require('./currentdate.js');
 
-function extractdata(jsondata){
+module.exports = function extractdata(jsondata){
   var alldata =[];
   var todayorders=[];
   var names=[];
-  jsondata = JSON.parse(jsondata).values;
-  jsondata.reduce(function(acc,curr,index){
-    curr.reduce(function(inacc,incurr,inindex){
+  data = jsondata.values;
+   console.log('type', typeof data);
+   data.forEach(function(elem){
+     console.log(elem[0]);
+     for (var i = 0; i < elem.length -1; i++) {
 
-      console.log(index,curr[inindex],inindex);
-      if(curr[inindex]==datetime.currentdate()[0]){
-        console.log(curr[inindex] +"="+datetime.currentdate()[0]);
-        console.log(curr[inindex]);
-        todayorders.push(curr[0]);
-        names.push(curr[5]);
-      }
-
-    },0);
+       if(elem[i]== datetime.currentdate()[0]){
+        console.log('here if');
+           todayorders.push(elem[0]);
+           names.push(elem[5]);
+       }
+     }
+    console.log(todayorders);
+    console.log(names);
   alldata[0] = todayorders;
   alldata[1] = names;
-  console.log(alldata);
+  console.log('alldata', alldata);
   });
-}
-module.exports = {
-extractdata : extractdata
+  return alldata;
 
 }
