@@ -19,7 +19,7 @@ jwtClient.authorize((err, tokens) => {
     var opts = {
         hostname: 'sheets.googleapis.com',
         port: 443,
-        path: `/v4/spreadsheets/${SHEET_ID}/values/mealsheet!A1:E5`,
+        path: `/v4/spreadsheets/${SHEET_ID}/values/mealsheet`,
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${tokens.access_token}`
