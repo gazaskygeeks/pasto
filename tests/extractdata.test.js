@@ -5,6 +5,8 @@ var mock = require('./mock.js');
 
 test("extractdata should return the right data",function(t){
    var data = extractdata(mock);
-   console.log("data",data);
+   var simulatedata = [ [ 'chicken pizza', 'shawerma', 'book' ],
+  [ 'mhmdshorafa', 'mhmdmushtaha', 'abeer' ] ]
+   t.deepEqual(data , simulatedata,"Data is Correct");
    t.end();
 });
