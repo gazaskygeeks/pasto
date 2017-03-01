@@ -6,7 +6,6 @@ var SCOPE = ['https://www.googleapis.com/auth/spreadsheets'];
 var SHEET_ID = '17JiGmBjoKvvau12o7PDoONwYNXHQ2fwjkEt9d3jhA3w';
 var sheetName = 'sheet4'
 module.exports = (req, res) => {
-  console.log('fun fiered');
   app.auth({
     scope: SCOPE
   }, (err, tokens) => {

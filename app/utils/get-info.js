@@ -28,7 +28,6 @@ function extractmembers(jsondata) {
         member.push(elem[1]);
     }
   });
-  console.log('member  ', member);
   return member;
 }
 module.exports = {
