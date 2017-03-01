@@ -3,11 +3,7 @@
 var https = require('https');
 var google = require('googleapis');
 var getinfo = require('./get-info.js')
-console.log('teeeeesst');
 module.exports = (config, cb) => {
-
-  console.log('dddagj');
-
   var opts = {
     hostname: 'sheets.googleapis.com',
     port: 443,
