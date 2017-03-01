@@ -7,5 +7,6 @@ module.exports = {
   'POST /order': require('./utils/write.js'),
   'GET /notallowd': require('./notallowd.js'),
   'GET /readmemberssheet': require('./utils/readmemberssheet.js'),
+  'GET /readpreorderssheet': require('./utils/readpreorder.js'),
   'GET /img.jpg': require('./img.js')
 }

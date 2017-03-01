@@ -7,11 +7,11 @@ function extractdata(jsondata) {
   var names = [];
   data = jsondata.values;
   data.forEach(function(elem) {
-    for (var i = 0; i < elem.length - 1; i++) {
+    for (var i = 0; i < elem.length -1; i++) {
 
       if (elem[i] == date.currentdate()[0]) {
         todayorders.push(elem[0]);
-        names.push(elem[1]);
+        names.push(elem[2]);
       }
     }
     alldata[0] = todayorders;
