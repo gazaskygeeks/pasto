@@ -22,7 +22,9 @@ module.exports = (config, cb) => {
       if (config.sheetName === 'sheet4' ) {
         data = getinfo.extractmembers(data)
       }else {
+        console.log("datainside else >>read.js",data);
         data = getinfo.extractdata(data)
+
       }
       cb(undefined,data);
     });
