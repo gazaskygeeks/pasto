@@ -5,5 +5,7 @@ module.exports = {
   'GET /breakfast': require('./breakfast.js'),
   'GET /lunch': require('./lunch.js'),
   'POST /order': require('./utils/write.js'),
-  'GET /notallowd': require('./notallowd.js')
+  'GET /notallowd': require('./notallowd.js'),
+  'GET /readmemberssheet': require('./utils/readmemberssheet.js'),
+  'GET /img.jpg': require('./img.js')
 }
