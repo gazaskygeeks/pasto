@@ -9,7 +9,7 @@ module.exports = (config, cb) => {
   var opts = {
     hostname: 'sheets.googleapis.com',
     port: 443,
-    path: `/v4/spreadsheets/${config.sheetId}/values/mealsheet`,
+    path: `/v4/spreadsheets/${config.sheetId}/values/${config.sheetName}`,
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${config.token}`

@@ -16,6 +16,7 @@ function extractdata(jsondata) {
     alldata[0] = todayorders;
     alldata[1] = names;
   });
+  console.log('alldata', alldata);
   return alldata;
 
 }

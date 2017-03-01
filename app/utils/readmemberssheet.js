@@ -3,13 +3,13 @@
 var app = require('./app/index.js');
 
 var SCOPE = ['https://www.googleapis.com/auth/spreadsheets'];
-var SHEET_ID = '1DY-JnL0myVggCoFIobL8FNIO3qlGg7mQOi97tzx8M4Q';
-var sheetName = 'mealsheet'
+var SHEET_ID = '17JiGmBjoKvvau12o7PDoONwYNXHQ2fwjkEt9d3jhA3w';
+var sheetName = 'sheet4'
 
 app.auth({
   scope: SCOPE
 }, (err, tokens) => {
-  app.write({
+  app.read({
     sheetId: SHEET_ID,
     token: tokens.access_token,
     sheetName:sheetName
