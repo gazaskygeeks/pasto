@@ -1,9 +1,11 @@
 var result = [];
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   result.push(profile.getName())
   result.push(profile.getEmail())
   console.log('result', result);
+
 }
 
 function signOut() {
@@ -12,11 +14,14 @@ function signOut() {
     console.log('User signed out.');
   });
 }
-
+console.log('here1');
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    }
+  console.log('here', this.readyState);
+  console.log('here', this.status);
+  if (this.readyState == 4 && this.status == 200) {
+    console.log('xhttp ', xhttp.responseText);
+  }
 };
 xhttp.open("GET", "/readmemberssheet", true);
-xhttp.send(result[1]);
+xhttp.send();

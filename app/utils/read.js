@@ -1,9 +1,7 @@
 'use strict';
 
 var https = require('https');
-var getinfo = require('./get-info.js');
-
-
+var getinfo = require('./get-info.js')
 
 module.exports = (config, cb) => {
   var opts = {
@@ -20,8 +18,13 @@ module.exports = (config, cb) => {
     var store = '';
     res.on('data', (chunk) => store = store + chunk);
     res.on('end', () => {
-      var data = JSON.parse(store)
-      getinfo.extractdata(data)
+      var data = JSON.parse(store);
+      if (config.sheetName === 'sheet4' ) {
+        data = getinfo.extractmembers(data)
+      }else {
+        data = getinfo.extractdata(data)
+      }
+      cb(undefined,data);
     });
   });
 
