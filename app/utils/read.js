@@ -23,6 +23,7 @@ module.exports = (config, cb) => {
         data = getinfo.extractmembers(data)
       } else {
         data = getinfo.extractdata(data)
+        
       }
       cb(undefined, data);
     });
