@@ -1,5 +1,5 @@
 var fs = require('fs');
-var dom = fs.readFileSync(__dirname + '/./dom.js', {
+var dom = fs.readFileSync(__dirname + '/../dom.js', {
   encoding: 'utf8'
 });
 module.exports = function(req, res) {

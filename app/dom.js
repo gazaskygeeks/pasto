@@ -13,6 +13,7 @@ var currentdate = new Date();
 var time = currentdate.getHours();
 
 function onSignIn(googleUser) {
+
     var profile = googleUser.getBasicProfile();
     db.push(profile.getName())
     db.push(profile.getEmail())
@@ -71,11 +72,6 @@ function sendorder() {
     httpsendorder.open("POST", "/writeorder", true);
     httpsendorder.send(JSON.stringify(result));
 }
-
-
-
-
-
 var email = 'shahy.m.93@gmail.com'
 
 function signOut() {
