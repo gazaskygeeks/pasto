@@ -19,14 +19,12 @@ module.exports = (config, cb) => {
     res.on('data', (chunk) => store = store + chunk);
     res.on('end', () => {
       var data = JSON.parse(store);
-      if (config.sheetName === 'sheet4' ) {
+      if (config.sheetName === 'sheet4') {
         data = getinfo.extractmembers(data)
-      }else {
-        console.log("datainside else >>read.js",data);
+      } else {
         data = getinfo.extractdata(data)
-
       }
-      cb(undefined,data);
+      cb(undefined, data);
     });
   });
 

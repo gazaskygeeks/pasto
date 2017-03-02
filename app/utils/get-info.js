@@ -5,13 +5,13 @@ function extractdata(jsondata) {
   var member = [];
   var todayorders = [];
   var names = [];
-  data = jsondata.values;
+  var data = jsondata.values;
   data.forEach(function(elem) {
     for (var i = 0; i < elem.length -1; i++) {
 
       if (elem[i] == date.currentdate()[0]) {
         todayorders.push(elem[0]);
-        names.push(elem[2]);
+        names.push(elem[5]);
       }
     }
     alldata[0] = todayorders;
@@ -22,7 +22,7 @@ function extractdata(jsondata) {
 
 function extractmembers(jsondata) {
   var member = [];
-  data = jsondata.values;
+  var data = jsondata.values;
   data.forEach(function(elem) {
     for (var i = 0; i < elem.length - 1; i++) {
         member.push(elem[1]);
