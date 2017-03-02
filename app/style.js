@@ -1,5 +1,5 @@
 var fs = require('fs');
-var style = fs.readFileSync(__dirname + '/../../css/style.css', {
+var style = fs.readFileSync(__dirname + '/../css/style.css', {
   encoding: 'utf8'
 });
 module.exports = function(req, res) {
