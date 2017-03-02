@@ -122,8 +122,8 @@ test("get-date.js should return arry of date and time", function(t) {
 test("extractdata should return the right data", function(t) {
   var data = getinfo.extractdata(mock);
   var simulatedata = [
-    ['chicken pizza', 'shawerma', 'book'],
-    ['mhmdshorafa', 'mhmdmushtaha', 'abeer']
+    ['book'],
+    ['abeer']
   ]
   t.deepEqual(data, simulatedata, "Data is Correct");
   t.end();
