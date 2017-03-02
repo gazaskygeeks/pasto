@@ -19,7 +19,8 @@
   "homepage": "https://github.com/gazaskygeeks/Pasto#readme",
   "dependencies": {
     "googleapis": "^17.1.0",
-    "tape": "^4.6.3"
+    "tape": "^4.6.3",
+    "twilio": "^2.11.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

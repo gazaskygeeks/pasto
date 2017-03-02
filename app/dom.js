@@ -1,6 +1,6 @@
 var result = [];
 var currentdate = new Date();
-var time = currentdate.getHours()
+var time = currentdate.getHours();
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
