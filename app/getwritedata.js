@@ -1,5 +1,5 @@
 var fs = require('fs');
-var getwritedata = fs.readFileSync(__dirname + '/../writedata.js', {
+var getwritedata = fs.readFileSync(__dirname + '/./writedata.js', {
   encoding: 'utf8'
 });
 module.exports = function(req, res) {

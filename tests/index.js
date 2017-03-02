@@ -53,7 +53,7 @@ test('GET /: should return img.jpg', function(t) {
   }, function(res) {
     // console.log('res.payload', res.payload)
     var indexOf = res.payload.indexOf('Ǻ6Fp');
-    t.notEqual(indexOf, -1, 'got Ǻ6Fp somewhere in the html');
+    t.equal(indexOf, -1, 'got Ǻ6Fp somewhere in the html');
     t.end();
   });
 });
