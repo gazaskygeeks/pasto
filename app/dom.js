@@ -12,16 +12,16 @@ function onSignIn(googleUser) {
     if (this.readyState == 4 && this.status == 200) {
       var emailsarray = JSON.parse(xhttp.responseText);
       console.log('emailsarray ', emailsarray);
-      if (time <= 10) {
+      if (time >= 10) {
         emailsarray.forEach(function(elem) {
           if (email == elem) {
-            window.location = "/breakfast";
+            window.location = "/lunch";
           }
         });
       } else {
         emailsarray.forEach(function(elem) {
           if (email == elem) {
-            window.location = "/lunch";
+            window.location = "/breakfast";
           }
         });
       }

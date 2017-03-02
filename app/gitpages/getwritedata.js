@@ -1,11 +1,11 @@
 var fs = require('fs');
-var dom = fs.readFileSync(__dirname + '/./dom.js', {
+var getwritedata = fs.readFileSync(__dirname + '/../writedata.js', {
   encoding: 'utf8'
 });
 module.exports = function(req, res) {
   res.writeHead(200, {
     'Content-type': 'application/javascript'
   });
-  res.write(dom);
+  res.write(getwritedata);
   res.end();
 };
