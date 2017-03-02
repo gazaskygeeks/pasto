@@ -15,7 +15,7 @@
       <p>Breakfast Time</p>
       <p id="left">Left Time <span>02:20</span></p>
     </div>
-    <form action="" method="post">
+
       <datalist id="browser">
   				<option value="K cheese">K cheese</option>
   				<option value="White cheese"></option>
@@ -23,8 +23,8 @@
   				<option value="Basterma"></option>
   			</datalist>
       <input list="browser" id="list-input" />
-      <input type="submit" value="Order" id="submit" />
-    </form>
+      <input type="submit" value="Order" id="submit" onclick="sendorder()"/>
+
     <div class="ppl-order">
       <p>People like you</p>
       <table id="myTable">
@@ -43,6 +43,21 @@
     </div>
   </div>
   <script type="text/javascript" src="writedata.js"></script>
+    <script type="text/javascript">
+           function sendorder(){
+            order = document.getElementById("list-input").value;
+             var httpsendorder = new XMLHttpRequest();
+             httppreorders.onreadystatechange = function() {
+               if (this.readyState == 4 && this.status == 200) {
+                 var values = JSON.parse(httpsendorder.responseText);
+
+                 }
+
+             };
+             httpsendorder.open("GET", "/writeorder", true);
+             httpsendorder.send(order);
+           }
+    </script>
 </body>
 
 </html>
