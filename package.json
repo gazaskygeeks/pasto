@@ -23,6 +23,7 @@
     "googleapis": "^17.1.0",
     "shot": "^3.4.0",
     "tape": "^4.6.3"
+    "twilio": "^2.11.1"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
