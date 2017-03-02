@@ -8,6 +8,7 @@ module.exports = {
   'GET /notallowd': require('./gitpages/notallowd.js'),
   'GET /readmemberssheet': require('./utils/readmemberssheet.js'),
   'GET /readpreorderssheet': require('./utils/readpreorder.js'),
-  'GET /img.jpg': require('./gitpages/img.js'),
-  'GET /writedata.js':require('./gitpages/getwritedata.js')
+  'POST /writeorder': require('./utils/writeorder.js'),
+  'GET /img.jpg': require('./img.js'),
+  'GET /writedata.js':require('./getwritedata.js')
 }
