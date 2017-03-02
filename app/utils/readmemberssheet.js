@@ -1,6 +1,6 @@
 'use strict';
 
-var app = require('../../app/index.js');
+var app = require('../../app/utils/index.js');
 
 var SCOPE = ['https://www.googleapis.com/auth/spreadsheets'];
 var SHEET_ID = '17JiGmBjoKvvau12o7PDoONwYNXHQ2fwjkEt9d3jhA3w';

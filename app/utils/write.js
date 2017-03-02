@@ -15,7 +15,6 @@ module.exports = (config, cb) => {
   };
   var d = {
     "range": "mealsheet",
-
     "majorDimension": "ROWS",
     "values": [
       ["Item", "Cost", "Stocked", "Ship Date"],

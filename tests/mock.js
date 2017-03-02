@@ -15,7 +15,7 @@ module.exports = {
       "chicken pizza",
       "lunch",
       "mhmdrshorafa@gmail.com",
-      "28/2/2017",
+      "2/3/2017",
       "1:30",
       "mhmdshorafa"
     ],
@@ -23,7 +23,7 @@ module.exports = {
       "shawerma",
       "lunch",
       "abu.mosab.95@google.com",
-      "28/2/2017",
+      "2/3/2017",
       "12:21",
       "mhmdmushtaha"
     ],
@@ -31,7 +31,7 @@ module.exports = {
       "jebna beda",
       "breakfast",
       "rqrenawi@hotmail.com",
-      "27/2/2017",
+      "1/3/2017",
       "9:10",
       "rana"
     ],
@@ -39,7 +39,7 @@ module.exports = {
       "book",
       "breakfast",
       "abeer@hotmail.com",
-      "28/2/2017",
+      "2/3/2017",
       "9:40",
       "abeer"
     ]

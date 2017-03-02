@@ -11,7 +11,7 @@ function extractdata(jsondata) {
 
       if (elem[i] == date.currentdate()[0]) {
         todayorders.push(elem[0]);
-        names.push(elem[2]);
+        names.push(elem[5]);
       }
     }
     alldata[0] = todayorders;
