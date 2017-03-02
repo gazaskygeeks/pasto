@@ -10,5 +10,4 @@ module.exports = (config, cb) => {
     null
   );
   jwtClient.authorize(cb);
-
 }

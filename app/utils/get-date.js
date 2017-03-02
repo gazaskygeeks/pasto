@@ -1,6 +1,6 @@
 function currentdate() {
-  var currentdate = new Date();
   var datetime = [];
+  var currentdate = new Date();
   datetime[0] = currentdate.getDate() + "/" +
     (currentdate.getMonth() + 1) + "/" +
     currentdate.getFullYear();
