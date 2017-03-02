@@ -43,21 +43,8 @@
     </div>
   </div>
   <script type="text/javascript" src="writedata.js"></script>
-    <script type="text/javascript">
-           function sendorder(){
-            order = document.getElementById("list-input").value;
-             var httpsendorder = new XMLHttpRequest();
-             httppreorders.onreadystatechange = function() {
-               if (this.readyState == 4 && this.status == 200) {
-                 var values = JSON.parse(httpsendorder.responseText);
+  <script type="text/javascript" src="dom.js"></script>
 
-                 }
-
-             };
-             httpsendorder.open("GET", "/writeorder", true);
-             httpsendorder.send(order);
-           }
-    </script>
 </body>
 
 </html>

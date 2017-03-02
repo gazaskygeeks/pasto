@@ -1,5 +1,5 @@
 var date = require('./get-date.js')
-
+var qs = require('querystring');
 
 function extractdata(jsondata) {
   var alldata = [];
@@ -37,7 +37,22 @@ function extractmembers(jsondata) {
   });
   return member;
 }
+
+
+
+function parseBody(req,callback) {
+var body = '';
+req.on('data', function(data) {
+body += data;
+});
+req.on('end', function() {
+
+callback(undefined,body);
+
+});
+}
 module.exports = {
   extractdata: extractdata,
-  extractmembers:extractmembers
+  extractmembers:extractmembers,
+  parseBody:parseBody
 }
