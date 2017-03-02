@@ -1,7 +1,11 @@
 var db = [];
-result ={
-  email:localStorage.getItem("email"),
-  order:''
+result = {
+    email: localStorage.getItem("email"),
+    name: localStorage.getItem("name"),
+    order: '',
+    date: '',
+    time: '',
+    category:localStorage.getItem("category")
 }
 
 
@@ -13,37 +17,46 @@ function onSignIn(googleUser) {
     db.push(profile.getName())
     db.push(profile.getEmail())
     localStorage.setItem("email", profile.getEmail());
+    localStorage.setItem("name", profile.getName());
 
 
     console.log("inside sign in", "email=" + profile.getEmail());
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var emailsarray = JSON.parse(xhttp.responseText);
-        console.log('emailsarray ', emailsarray);
-        if (time <= 10) {
-            emailsarray.forEach(function(elem) {
-                if (email == elem) {
-                    window.location = "/breakfast";
-                }
-            });
-        } else {
-            emailsarray.forEach(function(elem) {
-                if (email == elem) {
-                    window.location = "/lunch";
-                }
-            });
-        }
-    }
-};
+        if (this.readyState == 4 && this.status == 200) {
+            var emailsarray = JSON.parse(xhttp.responseText);
+            console.log('emailsarray ', emailsarray);
+            console.log(time);
 
-xhttp.open("GET", "/readmemberssheet", true);
-xhttp.send();
+              localStorage.setItem("category","breakfast");
+                emailsarray.forEach(function(elem) {
+                    if (email == elem) {
+
+                        window.location = "/breakfast";
+
+                    }
+                });
+          
+        }
+    };
+
+    xhttp.open("GET", "/readmemberssheet", true);
+    xhttp.send();
 }
 
 function sendorder() {
 
     var order = document.getElementById("list-input").value;
+    var currentdate = new Date();
+    var datetime = [];
+    datetime[0] = currentdate.getDate() + "/" +
+        (currentdate.getMonth() + 1) + "/" +
+        currentdate.getFullYear();
+
+    datetime[1] = currentdate.getHours() + ":" +
+        currentdate.getMinutes();
+    result.date = datetime[0];
+    result.time = datetime[1];
     result.order = order;
     console.log(result);
     var httpsendorder = new XMLHttpRequest();
@@ -56,7 +69,7 @@ function sendorder() {
 
     }
     httpsendorder.open("POST", "/writeorder", true);
-    httpsendorder.send(result);
+    httpsendorder.send(JSON.stringify(result));
 }
 
 
@@ -70,31 +83,4 @@ function signOut() {
     auth2.signOut().then(function() {
         console.log('User signed out.');
     });
-}
-
-
-
-
-
-
-function setCookie(cname, cvalue, exdays) {
-var d = new Date();
-d.setTime(d.getTime());
-var expires = "expires="+d.toUTCString();
-document.cookie = cname + "=" + cvalue + ";" + expires + ";path=http://localhost:8080/";
-}
-function getCookie(cname) {
-var name = cname + "=";
-var decodedCookie = decodeURIComponent(document.cookie);
-var ca = decodedCookie.split(';');
-for(var i = 0; i <ca.length; i++) {
-var c = ca[i];
-while (c.charAt(0) == ' ') {
-c = c.substring(1);
-}
-if (c.indexOf(name) == 0) {
-return c.substring(name.length, c.length);
-}
-}
-return
 }

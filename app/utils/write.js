@@ -3,7 +3,8 @@
 var https = require('https');
 var google = require('googleapis');
 var getinfo = require('./get-info.js')
-module.exports = (config, cb) => {
+module.exports = (config,body, cb) => {
+  console.log("body towrite",body);
   var opts = {
     hostname: 'sheets.googleapis.com',
     port: 443,
@@ -13,15 +14,14 @@ module.exports = (config, cb) => {
       'Authorization': `Bearer ${config.token}`
     }
   };
+
+
   var d = {
     "range": "mealsheet",
     "majorDimension": "ROWS",
     "values": [
-      ["Item", "Cost", "Stocked", "Ship Date"],
-      ["aa", "$222.50", "0", "3/1/2016"],
-      ["z", "$15", "2", "3/15/2016"],
-      ["Eaaaangine", "$100", "1", "30/20/2016"],
-      ["Total2222s", "=SUM(B2:B4)", "=SUM(C2:C4)", "=MAX(D2:D4)"]
+      [body.order,body.category, body.email,body.date, body.time,body.name]
+
     ],
   }
 
