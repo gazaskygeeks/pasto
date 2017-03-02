@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev:test": "./node_modules/.bin/nodemon tests/extractdata.test.js"
+    "dev:test": "./node_modules/.bin/nodemon tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gazaskygeeks/Pasto#readme",
   "dependencies": {
     "googleapis": "^17.1.0",
+    "shot": "^3.4.0",
     "tape": "^4.6.3"
   },
   "devDependencies": {
