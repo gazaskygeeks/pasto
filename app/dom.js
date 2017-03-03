@@ -20,30 +20,35 @@ function onSignIn(googleUser) {
     localStorage.setItem("email", profile.getEmail());
     localStorage.setItem("name", profile.getName());
 
-
-    console.log("inside sign in", "email=" + profile.getEmail());
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var emailsarray = JSON.parse(xhttp.responseText);
-            console.log('emailsarray ', emailsarray);
-            console.log(time);
 
-              localStorage.setItem("category","breakfast");
+              localStorage.setItem("category",setcategory());
                 emailsarray.forEach(function(elem) {
                     if (email == elem) {
 
-                        window.location = "/breakfast";
-
-                    }
+                        window.location = "/orders";
+  }
                 });
-          
+
         }
     };
 
     xhttp.open("GET", "/readmemberssheet", true);
     xhttp.send();
 }
+
+var email = 'shahy.m.93@gmail.com'
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function() {
+        console.log('User signed out.');
+    });
+}
+
 
 function sendorder() {
 
@@ -55,7 +60,7 @@ function sendorder() {
         currentdate.getFullYear();
 
     datetime[1] = currentdate.getHours() + ":" +
-        currentdate.getMinutes();
+    currentdate.getMinutes();
     result.date = datetime[0];
     result.time = datetime[1];
     result.order = order;
@@ -72,11 +77,15 @@ function sendorder() {
     httpsendorder.open("POST", "/writeorder", true);
     httpsendorder.send(JSON.stringify(result));
 }
-var email = 'shahy.m.93@gmail.com'
 
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function() {
-        console.log('User signed out.');
-    });
+function setcategory(){
+  var localTime = new Date().getHours();
+  var mealcategory = "";
+  if (localTime > 10) {
+
+      mealcategory = "lunch";
+  } else {
+      mealcategory = "breakfast";
+  }
+  return mealcategory;
 }

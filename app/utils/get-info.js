@@ -9,18 +9,20 @@ function extractdata(jsondata) {
     var data = jsondata.values;
     var currenthour = new Date();
     var mealcategory = "breakfast";
+    var hours = parseInt(date.srvtime().substring(11, 13));
 
-    console.log("currenthour.getHours()", currenthour.getHours());
+    if (hours > 10) {
+        mealcategory = "lunch";
+    }
 
     data.forEach(function(elem) {
-        for (var i = 0; i < elem.length - 1; i++) {
+      if (elem[3] == date.currentdate()[0] && elem[1] == mealcategory) {
 
-            if (elem[i] == date.currentdate()[0] && elem[1] == mealcategory) {
-                console.log(i, elem[i]);
-                todayorders.push(elem[0]);
-                names.push(elem[5]);
-            }
-        }
+            todayorders.push(elem[0]);
+            names.push(elem[5]);
+            
+      }
+
         alldata[0] = todayorders;
         alldata[1] = names;
     });
