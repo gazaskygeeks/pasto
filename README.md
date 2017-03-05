@@ -34,7 +34,14 @@ To use Twilio just signup, while for Google you need to follow those steps:
 If all the steps about are correct, you should have downloaded the json keys and
 create the sheet when the orders will be saved.
 
-In order to run the application first create a `.env` file like the example.
+For Google SignIn instead:
+- visit the [official docs](https://developers.google.com/identity/sign-in/web/sign-in)
+- in the "Specify your app's client ID", click on highlighted section which should
+  redirect to the google developer console
+- follow the instructions on https://developers.google.com/identity/sign-in/web/devconsole-project
+
+In order to run the application first create a `.env` file like the example. Note,
+these are pseudo-random values and not real ones.
 
 ```
 TWILIO_ACCOUNT_SID="AC4549x162aac9452131f82725465d734d"
@@ -45,6 +52,7 @@ TWILIO_PHONE_FROM="+13202220044"
 GOOGLE_SHEET_ID="17JiGmBjoKvvau12o7PDoONwYAXHC3fwjkEt9f3jhA3w"
 GOOGLE_CLIENT_EMAIL="bot-741@pasto-140011.iam.gserviceaccount.com"
 GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvg...Wiw70jaC\n-----END PRIVATE KEY-----\n"
+GOOGLE_OAUTH_CLIENT_ID="660444165236-uuj139bbuo0dhgooi9skmfvc80o587jh.apps.googleusercontent.com"
 ```
 
 Once all the environmental variables are set, clone and run the repo:
