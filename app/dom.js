@@ -1,5 +1,5 @@
-var db = [];
-result = {
+
+var result = {
     email: localStorage.getItem("email"),
     name: localStorage.getItem("name"),
     order: '',
@@ -7,7 +7,7 @@ result = {
     time: '',
     category:localStorage.getItem("category")
 }
-
+var email = localStorage.getItem("email");
 
 var currentdate = new Date();
 var time = currentdate.getHours();
@@ -15,8 +15,6 @@ var time = currentdate.getHours();
 function onSignIn(googleUser) {
 
     var profile = googleUser.getBasicProfile();
-    db.push(profile.getName())
-    db.push(profile.getEmail())
     localStorage.setItem("email", profile.getEmail());
     localStorage.setItem("name", profile.getName());
 
@@ -24,14 +22,15 @@ function onSignIn(googleUser) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var emailsarray = JSON.parse(xhttp.responseText);
-
+              console.log(emailsarray);
               localStorage.setItem("category",setcategory());
-                emailsarray.forEach(function(elem) {
-                    if (email == elem) {
-
-                        window.location = "/orders";
-  }
-                });
+              var verify = verifyemail(emailsarray);
+              if(verify==1){
+                window.location = "/orders";
+              }
+              else {
+                window.location = "/notallowd";
+              }
 
         }
     };
@@ -40,7 +39,7 @@ function onSignIn(googleUser) {
     xhttp.send();
 }
 
-var email = 'shahy.m.93@gmail.com'
+
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -88,4 +87,16 @@ function setcategory(){
       mealcategory = "breakfast";
   }
   return mealcategory;
+}
+function verifyemail(emailsarr){
+  var ok = 0;
+  emailsarr.forEach(function(elem) {
+    console.log(email,elem);
+      if (email == elem) {
+
+         ok = 1 ;
+      }
+                   });
+return ok;
+
 }
