@@ -6,7 +6,7 @@ var app = require('../../app/utils/index.js');
 var SCOPE = ['https://www.googleapis.com/auth/spreadsheets'];
 var SHEET_ID = '1DY-JnL0myVggCoFIobL8FNIO3qlGg7mQOi97tzx8M4Q';
 var sheetName = 'mealsheet'
-module.exports = (req, res) => {
+module.exports = ((req, res) => {
   app.auth({
     scope: SCOPE
   }, (err, tokens) => {
@@ -27,13 +27,13 @@ module.exports = (req, res) => {
   //    res.end(JSON.stringify(writeSheet));
     });
   });
-}
+})()
 
 function sendsms(message){
   console.log("sdsd");
    client.messages.create({
         from: '+13203320074',
-        to: '+972599308956',
+        to: '+972594100319',
         body: message
       }, function(err, message) {
         if(err) {
