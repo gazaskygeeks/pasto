@@ -1,9 +1,10 @@
 'use strict'
-var mainHandler =require('./main.js');
+
+require('dotenv').config();
 var http = require('http');
+var mainHandler =require('./main.js');
+var PORT = process.env.PORT || 8080;
 
-
-
-http.createServer(mainHandler).listen(process.env.PORT || 8080, function() {
-  console.log('Listening on 8080');
+http.createServer(mainHandler).listen(PORT, function() {
+  console.log(`Listening on ${PORT}`);
 });
