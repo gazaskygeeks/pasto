@@ -8,6 +8,7 @@ var sheetName = 'sheet4'
 module.exports = (req, res) => {
   app.auth({
     scope: SCOPE
+
   }, (err, tokens) => {
     app.read({
       sheetId: SHEET_ID,
@@ -18,6 +19,7 @@ module.exports = (req, res) => {
       console.log(require('util').inspect(writeSheet, {
         depth: null
       }));
+          console.log("Require autherise");
       res.end(JSON.stringify(writeSheet));
     });
   });

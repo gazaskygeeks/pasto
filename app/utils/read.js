@@ -15,15 +15,20 @@ module.exports = (config, cb) => {
   }
 
   var req = https.request(opts, (res) => {
+    console.log("inside request");
     var store = '';
     res.on('data', (chunk) => store = store + chunk);
     res.on('end', () => {
       var data = JSON.parse(store);
+      console.log("before if",data);
       if (config.sheetName === 'sheet4') {
+        console.log("inside if");
         data = getinfo.extractmembers(data)
+        console.log(data);
       } else {
+        console.log("inside else");
         data = getinfo.extractdata(data)
-        
+
       }
       cb(undefined, data);
     });
