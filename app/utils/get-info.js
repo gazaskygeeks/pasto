@@ -16,11 +16,12 @@ function extractdata(jsondata) {
     }
 
     data.forEach(function(elem) {
+      console.log("date",date.currentdate()[0]);
       if (elem[3] == date.currentdate()[0] && elem[1] == mealcategory) {
 
             todayorders.push(elem[0]);
             names.push(elem[5]);
-            
+
       }
 
         alldata[0] = todayorders;
