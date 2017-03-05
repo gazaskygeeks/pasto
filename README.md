@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/gazaskygeeks/pasto.svg?branch=master)](https://travis-ci.org/gazaskygeeks/pasto)
 [![Code Climate](https://codeclimate.com/github/gazaskygeeks/pasto/badges/gpa.svg)](https://codeclimate.com/github/gazaskygeeks/pasto)
 [![Test Coverage](https://codeclimate.com/github/gazaskygeeks/pasto/badges/coverage.svg)](https://codeclimate.com/github/gazaskygeeks/pasto/coverage)
+[![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/gazaskygeeks_bootcamp/pasto)
 
 A simple tool to order the daily breakfast and lunch at GSG bootcamp.
 The original requirement:
