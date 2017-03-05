@@ -58,18 +58,16 @@ test('GET /: should return img.jpg', function(t) {
   });
 });
 
-test('GET /: should return breakfast.html', function(t) {
+test('GET /: should return order.html', function(t) {
   shot.inject(mainHandler, {
     method: 'GET',
-    url: '/breakfast'
+    url: '/orders'
   }, function(res) {
     var indexOf = res.payload.indexOf('table');
     t.notEqual(indexOf, -1, 'got table somewhere in the html');
     t.end();
   });
 });
-
-
 
 test('GET /: should return style.css', function(t) {
   shot.inject(mainHandler, {
