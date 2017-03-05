@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/gazaskygeeks/Pasto#readme",
   "dependencies": {
+    "google-auth-library": "^0.10.0",
     "googleapis": "^17.1.0",
+    "moment": "^2.17.1",
     "shot": "^3.4.0",
     "tape": "^4.6.3",
     "twilio": "^2.11.1"
