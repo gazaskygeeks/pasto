@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node tests/index.js",
+    "test": "node tests/runner.js",
     "sendsms":"node app/utils/sendsms.js",
     "dev:test": "./node_modules/.bin/nodemon tests/index.js",
     "cov": "./node_modules/.bin/istanbul cover tests/index.js"
