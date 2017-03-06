@@ -1,7 +1,6 @@
-
 'use strict';
 var moment = require('moment');
-var getinfo = require('./get-date.js');
+var date = require('./get-date.js');
 
 var app = require('../../app/utils/index.js');
   var client = require('twilio')('AC4549b162aac9452031f82724465d734d','3be2fe57ff5ac237090024d8e05e5f20');
