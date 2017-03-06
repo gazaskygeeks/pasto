@@ -40,11 +40,14 @@ function writefoodmenu() {
     var breakfast = new Array("white cheese", "yellow cheese", "puck cheese");
     var lunch = new Array("shesh tawok", "hamburger", "eshnetsel", "kabab", "shawerma");
     if (mealcategory == "breakfast") {
-
+      document.getElementById("categorytime").innerHTML = "Lunch Time";
+      document.getElementById("closespan").innerHTML = "2:20";
         for (var i = 0; i < breakfast.length; ++i) {
             str += '<option value="' + breakfast[i] + '" />';
         }
     } else {
+      document.getElementById("categorytime").innerHTML = "Lunch Time";
+      document.getElementById("closespan").innerHTML = "2:20";
         for (var i = 0; i < lunch.length; ++i) {
             str += '<option value="' + lunch[i] + '" />';
         }
