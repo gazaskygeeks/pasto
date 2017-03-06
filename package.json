@@ -7,8 +7,9 @@
     "start": "node index.js",
     "test": "node tests/runner.js",
     "sendsms":"node app/utils/sendsms.js",
-    "dev:test": "./node_modules/.bin/nodemon tests/index.js",
-    "cov": "./node_modules/.bin/istanbul cover tests/index.js"
+    "dev:test": "./node_modules/.bin/nodemon tests/runner.js",
+    "cov": "./node_modules/.bin/istanbul cover tests/runner.js",
+    "cov:upload": "CODECLIMATE_REPO_TOKEN=51620977cdd24499e6bdf24fa733edd86065e4eec1c6f016c793b5ec54b97a64 ./node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
