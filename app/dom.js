@@ -24,6 +24,7 @@ function onSignIn(googleUser) {
             var emailsarray = JSON.parse(xhttp.responseText);
               console.log(emailsarray);
               localStorage.setItem("category",setcategory());
+
               var verify = verifyemail(emailsarray);
               if(verify==1){
                 window.location = "/orders";
@@ -63,7 +64,6 @@ function sendorder() {
     result.date = datetime[0];
     result.time = datetime[1];
     result.order = order;
-    console.log(result);
     var httpsendorder = new XMLHttpRequest();
     httppreorders.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -91,7 +91,7 @@ function setcategory(){
 function verifyemail(emailsarr){
   var ok = 0;
   emailsarr.forEach(function(elem) {
-    console.log(email,elem);
+
       if (email == elem) {
 
          ok = 1 ;
